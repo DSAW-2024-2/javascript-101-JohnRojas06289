@@ -1,26 +1,68 @@
 // Sum of Two Numbers
 function sum(a, b) {
-  // Add your code here
+  if (typeof a!== "number" || typeof b!== "number"){
+    console.log("Los datos de entrada no son adecuados");
+  } else {
+    return a + b;
+  }
 }
 
 // Factorial of a Number
 function factorial(n) {
-  // Add your code here
+  if (n<0){
+    return console.log("Los datos de entrada no son adecuados");
+  }else if (n==0){
+    return 1;
+  }else{
+    let fact = 1;
+    for (let i = 1; i <= n; i++){
+      fact *= i;
+    }
+    return fact;
+  }
 }
 
 // Find the Largest Number
 function findLargest(arr) {
-  // Add your code here
+  
+    let largest = arr[0];
+    for (let i = 1; i < arr.length; i++){
+      if (arr[i] > largest){
+        largest = arr[i];
+      }
+    }
+    return largest;
 }
 
 // Count Vowels in a String
 function countVowels(str) {
-  // Add your code here
+
+  let count = 0;
+  let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+  for (let i = 0; i < str.length; i++){
+    if (vowels.includes(str[i])){
+      count++;
+    }
+  }
+  return count;
+
 }
 
 // Check if a Number is Prime
 function isPrime(n) {
-  // Add your code here
+
+
+  if (n > 1 | n%1 == 0){
+    for (let i = 2; i < n; i++){
+      if (n%i == 0){
+        return false;
+      }
+    }
+    return true; 
+  }else{
+    return false;
+  }
 }
 
 module.exports = {
